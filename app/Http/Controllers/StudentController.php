@@ -88,7 +88,6 @@ class StudentController extends Controller
         
     
   } 
-
     public function exportIntoExcel(){
        
       return Excel::download(new StudentExport,'Studentlist.xlsx');
@@ -97,5 +96,6 @@ class StudentController extends Controller
        
       return Excel::download(new StudentExport,'Studentlist.csv');
     }
+    
 }
 
