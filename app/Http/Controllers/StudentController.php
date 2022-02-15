@@ -14,6 +14,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Routing\Redirector;
 use App\Exports\StudentExport;
 use Excel;
+use App\Imports\StudentImport;
 
 
 
@@ -96,6 +97,16 @@ class StudentController extends Controller
        
       return Excel::download(new StudentExport,'Studentlist.csv');
     }
-    
+     public function ImportForm(){
+
+         return view('import-form');
+     }
+
+     public function ImportCsv(Request $request){
+      
+         Excel::import(new StudentImport,$request->file);
+         return "Record are Imported successfully";
+     }
+
 }
 

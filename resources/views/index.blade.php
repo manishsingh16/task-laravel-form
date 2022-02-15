@@ -9,7 +9,7 @@
 			
 						<div class="container">
 							<div clas="row">
-								<div class="col-md-4">
+								<div class="col-md-3">
 								<div class="ml-auto">
 							<div class="btn-group">
 								<a href ="{{url('/addstudent')}}" class="btn btn-primary">Add Student </a>
@@ -18,7 +18,7 @@
 			
 								</div>
 
-                              <div class="col-md-4">
+                              <div class="col-md-3">
 							  <div class="ml-auto">
 							<div class="btn-group">
 								<a href ="{{url('/export-csv')}}" class="btn btn-primary">Download Csv  </a>
@@ -26,7 +26,7 @@
 						</div>
 
 							  </div>
-							  <div class="col-md-4">
+							  <div class="col-md-3">
 							  <div class="ml-auto">
 							<div class="btn-group">
 								<a href ="{{url('/export-excel')}}" class="btn btn-primary">Download Excel  </a>
@@ -34,6 +34,19 @@
 						</div>
 
 							  </div>
+							   <div class="col-md-3">
+							  
+<form method="POST" action="{{route('student.csv')}}" class="needs-validation" enctype="multipart/form-data">
+	@csrf
+  <label for="fname">Import CSV</label><br>
+  <input type="file" id="fname" name="file" value="John"><br>
+  
+  <input type="submit" value="Submit">
+</form> 
+
+
+							  </div>
+							 
 							</div>
 
 						</div>
